@@ -9,3 +9,12 @@ class Algeria_cities(models.Model):
    wilaya_code =models.CharField(max_length=255) 
    wilaya_name =models.CharField(max_length=255) 
    wilaya_name_ascii =models.CharField(max_length=255) 
+
+class Algeria_Wilaya(models.Model):
+   wilaya_code =models.PositiveSmallIntegerField() 
+   wilaya_name =models.CharField(max_length=255) 
+   wilaya_name_ascii =models.CharField(max_length=255) 
+   class Meta:
+        ordering = ['wilaya_code'] 
+   def __str__(self):
+       return self.wilaya_name    
