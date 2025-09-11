@@ -1,4 +1,4 @@
 .env
-algeria_cities_api/__pycache__/
-api/__pycache__/
-api/migrations
+algeria_cities_api\__pycache__\
+api\__pycache__\
+api\migrations

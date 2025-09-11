@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -81,7 +81,8 @@ WSGI_APPLICATION = 'algeria_cities_api.wsgi.application'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 import dj_database_url
 DATABASES = {
-    'default': dj_database_url.parse(os.getenv('db_url'))
+    'default': dj_database_url.parse(os.getenv('db_url'), conn_max_age=600,
+        ssl_require=True)
 }
 
 
